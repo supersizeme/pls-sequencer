@@ -38,7 +38,7 @@ const Timeline: React.FC<TimelineProps> = ({
         Séquence PLS
       </h2>
       <div
-        className="flex-grow relative timeline-styled overflow-y-auto"
+        className="flex-grow relative timeline-styled overflow-y-auto pt-4"
         data-droppable-id="timeline"
         onDragOver={onDragOver}
         onDrop={(e) => onDrop(e, orderedSteps.length)}
@@ -59,7 +59,7 @@ const Timeline: React.FC<TimelineProps> = ({
             Faites glisser les étapes ici dans le bon ordre
           </div>
         ) : (
-          <div className="pb-20">
+          <div className="pb-20 pr-4">
             {orderedSteps.map((step, index) => (
               <div 
                 key={step.id} 
@@ -85,7 +85,7 @@ const Timeline: React.FC<TimelineProps> = ({
         {/* Zone de drop supplémentaire en bas de la timeline pour s'assurer que l'espace vide est droppable */}
         {orderedSteps.length > 0 && (
           <div 
-            className="min-h-[150px] mt-4 border-t border-dashed border-gray-200 pt-4 sticky bottom-0 bg-white"
+            className="min-h-[100px] mt-4 border-t border-dashed border-gray-200 pt-4 sticky bottom-0 bg-white"
             data-droppable-id="timeline"
             onDragOver={onDragOver}
             onDrop={(e) => onDrop(e, orderedSteps.length)}

@@ -38,16 +38,16 @@ const StepCard: React.FC<StepCardProps> = ({
     
     if (isCorrect) {
       return (
-        <div className="absolute -right-2 -top-2 bg-green-500 rounded-full w-7 h-7 flex items-center justify-center shadow-md border-2 border-white z-10 transform transition-transform duration-300 hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="absolute -right-3 -top-3 bg-green-500 rounded-full w-8 h-8 flex items-center justify-center shadow-md border-2 border-white z-10 transform transition-transform duration-300 hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
           </svg>
         </div>
       );
     } else {
       return (
-        <div className="absolute -right-2 -top-2 bg-red-500 rounded-full w-7 h-7 flex items-center justify-center shadow-md border-2 border-white z-10 transform transition-transform duration-300 hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="absolute -right-3 -top-3 bg-red-500 rounded-full w-8 h-8 flex items-center justify-center shadow-md border-2 border-white z-10 transform transition-transform duration-300 hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </div>
@@ -60,7 +60,7 @@ const StepCard: React.FC<StepCardProps> = ({
       draggable={isDraggable}
       onDragStart={handleDragStart}
       className={`
-        step-card-styled p-4 mb-2 rounded-lg shadow-md relative
+        step-card-styled p-4 mb-2 rounded-lg shadow-md relative mt-2
         ${isDraggable ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}
         ${isCorrect === true ? 'border-green-500 border-2' : ''}
         ${isCorrect === false ? 'border-red-500 border-2' : ''}

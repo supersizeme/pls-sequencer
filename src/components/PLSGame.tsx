@@ -295,8 +295,8 @@ const PLSGame: React.FC = () => {
           onTimeUp={handleTimeUp}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[calc(100vh-300px)]">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-6 min-h-[calc(100vh-300px)]">
+          <div className="md:col-span-3">
             <h2 className="text-xl font-bold mb-4 text-dark-gray">Étapes disponibles</h2>
             <StepPool 
               steps={gameState.steps} 
@@ -307,7 +307,7 @@ const PLSGame: React.FC = () => {
             />
           </div>
 
-          <div className="md:col-span-1 flex flex-col h-full">
+          <div className="md:col-span-4 flex flex-col h-full">
             <h2 className="text-xl font-bold mb-4 text-dark-gray">Timeline</h2>
             <div className="flex-grow">
               <Timeline 

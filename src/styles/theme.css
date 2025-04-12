@@ -1,0 +1,231 @@
+/* Thème visuel inspiré des formations Croix-Rouge */
+
+/* Variables de couleurs */
+:root {
+  --red-cross: #E42313;
+  --red-cross-light: #f8d7d7;
+  --red-cross-dark: #b31b0e;
+  --dark-gray: #333333;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+}
+
+/* Styles généraux */
+body {
+  background-color: var(--light-gray);
+  background-image: url('../images/background-pattern.svg');
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+/* Conteneur principal avec ombre */
+.main-container {
+  background-color: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* En-tête stylisé */
+.header-styled {
+  background-image: url('../images/header-bg.svg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem;
+  border-radius: 8px 8px 0 0;
+  margin: -2rem -2rem 2rem -2rem;
+  position: relative;
+}
+
+/* Titre principal avec effet */
+.title-styled {
+  position: relative;
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.title-styled::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--red-cross);
+  border-radius: 3px;
+}
+
+/* Cartes d'étapes stylisées */
+.step-card-styled {
+  background-image: url('../images/card-bg.svg');
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.step-card-styled:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(228, 35, 19, 0.15);
+}
+
+/* Timeline stylisée */
+.timeline-styled {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--red-cross) 0%, var(--red-cross-light) 100%);
+  border-radius: 3px;
+  height: 100%;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 4.5px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--red-cross);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--red-cross-light);
+  z-index: 10;
+}
+
+/* Boutons stylisés */
+.button-styled {
+  background: linear-gradient(to right, var(--red-cross), var(--red-cross-dark));
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(228, 35, 19, 0.3);
+}
+
+.button-styled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(228, 35, 19, 0.4);
+}
+
+/* Feedback panel stylisé */
+.feedback-panel {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--red-cross);
+  transition: all 0.3s ease;
+}
+
+/* Chronomètre stylisé */
+.timer-styled {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: var(--light-gray);
+  display: inline-block;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation pour les cartes correctement placées */
+@keyframes correctPlacement {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.correct-placement {
+  animation: correctPlacement 0.5s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+  
+  .header-styled {
+    padding: 1.5rem 1rem;
+    margin: -1rem -1rem 1.5rem -1rem;
+  }
+}
+
+/* Styles pour le tutoriel */
+.tutorial-highlight {
+  position: relative;
+  z-index: 60;
+  box-shadow: 0 0 0 4px rgba(228, 35, 19, 0.5), 0 0 0 8px rgba(228, 35, 19, 0.3);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 4px rgba(228, 35, 19, 0.5), 0 0 0 8px rgba(228, 35, 19, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(228, 35, 19, 0.5), 0 0 0 16px rgba(228, 35, 19, 0.3); }
+  100% { box-shadow: 0 0 0 4px rgba(228, 35, 19, 0.5), 0 0 0 8px rgba(228, 35, 19, 0.3); }
+}
+
+/* Styles pour le personnage PLS */
+.pls-character-container {
+  background-color: var(--light-gray);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.pls-character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  position: relative;
+}
+
+.character-svg {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Animation de la respiration */
+.breathing-animation {
+  animation: breathing 2s infinite ease-in-out;
+}
+
+@keyframes breathing {
+  0% { opacity: 0.3; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.3; transform: scale(0.95); }
+}
+
+/* Animation pour les transitions entre les étapes */
+.pls-character .character-svg {
+  animation: stepTransition 0.8s ease-in-out;
+}
+
+@keyframes stepTransition {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Style pour la description de l'étape */
+.pls-character-description {
+  font-weight: 500;
+  color: var(--dark-gray);
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
